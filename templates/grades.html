@@ -1,0 +1,228 @@
+{% extends "template.html" %} {% block title %} Assignments {% endblock %} {%
+block css %}
+<link rel="stylesheet" href="../static/styles/grades.css" />
+{% endblock %} {% block content %}
+{% if session.type == "instructor" %}
+  <div class="alert">
+    <p>
+    📣📢  Use the buttons below to view the student grades ⚠️🚨
+  </p>
+  </div>
+<div class="main-div banner no-margin">
+  {% else %}
+  <div class="main-div banner">
+{% endif %}
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2 class="main-title">
+          {% if session.type == "student" %}
+          Course 
+          {% else %}
+          Student
+          {% endif %}
+          Grades
+        </h2>
+      </div>
+    </div>
+  </section>
+</div>
+{% if session.type == "student" %}
+<div class="assignment-list">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2>Assignment Grades</h2>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Assignment #</th>
+              <th>Assignment Name</th>
+              <th>Grade (%)</th>
+              <th>Remark Request</th>
+            </tr>
+          </thead>
+          <tbody class="assignment-table">
+            <tr>
+              <td class="assignment-number">1</td>
+              <td>Relational Algebra and SQL</td>
+              {% if assignments[0].grade is none %}
+              <td>Awaiting Grade</td>
+              <td>N/A</button></td>
+              {% else %}            
+              <td>{{ assignments[0].grade }}</td>         
+              {% if assignments[0].regrade_requested %}
+              <td><button class="remark-btn">Request Again</button></td>
+              {% else %}
+              <td><button class="remark-btn">Request Remark</button></td>
+              {% endif %}
+              {% endif %}                        
+            </tr>
+            <tr>
+              <td class="assignment-number">2</td>
+              <td>HTML/CSS and Flask</td>
+              {% if assignments[1].grade is none %}
+              <td>Awaiting Grade</td>
+              <td>N/A</button></td>
+              {% else %}            
+              <td>{{ assignments[1].grade }}</td>         
+              {% if assignments[1].regrade_requested %}
+              <td><button class="remark-btn">Request Again</button></td>
+              {% else %}
+              <td><button class="remark-btn">Request Remark</button></td>
+              {% endif %}
+              {% endif %}                        
+            </tr>
+            <tr>
+              <td class="assignment-number">3</td>
+              <td>HTML/CSS, JS, SQL and Flask</td>
+              {% if assignments[2].grade is none %}
+              <td>Awaiting Grade</td>
+              <td>N/A</button></td>
+              {% else %}            
+              <td>{{ assignments[2].grade }}</td>         
+              {% if assignments[2].regrade_requested %}
+              <td><button class="remark-btn">Request Again</button></td>
+              {% else %}
+              <td><button class="remark-btn">Request Remark</button></td>
+              {% endif %}
+              {% endif %}                        
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="assignment-list">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2>Test and Exam Grades</h2>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Assessment #</th>
+              <th>Assignment Name</th>
+              <th>Grade (%)</th>
+              <th>Remark Request</th>
+            </tr>
+          </thead>
+          <tbody class="assignment-table">
+            <tr>
+              <td class="assignment-number">4</td>
+              <td>Tutorial Attendance</td>
+              {% if assignments[3].grade is none %}
+              <td>Awaiting Grade</td>
+              <td>N/A</button></td>
+              {% else %}            
+              <td>{{ assignments[3].grade }}</td>         
+              {% if assignments[3].regrade_requested %}
+              <td><button class="remark-btn">Request Again</button></td>
+              {% else %}
+              <td><button class="remark-btn">Request Remark</button></td>
+              {% endif %}
+              {% endif %}                        
+            </tr>
+            <tr>
+              <td class="assignment-number">5</td>
+              <td>Midterm Exam</td>
+              {% if assignments[4].grade is none %}
+              <td>Awaiting Grade</td>
+              <td>N/A</button></td>
+              {% else %}            
+              <td>{{ assignments[4].grade }}</td>         
+              {% if assignments[4].regrade_requested %}
+              <td><button class="remark-btn">Request Again</button></td>
+              {% else %}
+              <td><button class="remark-btn">Request Remark</button></td>
+              {% endif %}
+              {% endif %}                        
+            </tr>
+            <tr>
+              <td class="assignment-number">6</td>
+              <td>Final Exam</td>
+              {% if assignments[5].grade is none %}
+              <td>Awaiting Grade</td>
+              <td>N/A</button></td>
+              {% else %}            
+              <td>{{ assignments[5].grade }}</td>         
+              {% if assignments[5].regrade_requested %}
+              <td><button class="remark-btn">Request Again</button></td>
+              {% else %}
+              <td><button class="remark-btn">Request Remark</button></td>
+              {% endif %}
+              {% endif %}                        
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+{% else %}
+<div class="assignment-list">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2>All Students</h2>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Student Username</th>
+              <th>Instructor Username</th>
+            </tr>
+          </thead>
+          <tbody class="assignment-table">
+            {% for student in student_list %}
+            <tr>
+              <td>{{ student.user.id }}</td>
+              <td><button class="student-btn" data-student-id="{{ student.user.username }}"> {{ student.user.username }}</button>
+              </td>
+              <td>{{ student.instructor.user.username}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+{% endif %}
+<!--MODAL FOR REMARK REQUEST-->
+<div id="myModal" class="modal hidden">
+  <div class="modal-content">
+    <div class="titular">
+      <h2>Remark Request for Assignment <span id="assignmentNumber"></span></h2>
+      <span class="close">&times;</span>
+    </div>
+    <form id="remark-form" action="/grades" method="post">
+      <input type="hidden" id="assignmentId" name="assignmentId" />
+      <input
+        type="number"
+        name="grade"
+        placeholder="Requested grade (1-100)..."
+        min="1"
+        max="100"
+        required
+      />
+      <textarea
+        name="description"
+        placeholder="Enter your remark..."
+        required
+      ></textarea>
+      <button class="form-btn" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %} {% block js %}
+<script src="../static/scripts/grades.js"></script>
+{% endblock %}

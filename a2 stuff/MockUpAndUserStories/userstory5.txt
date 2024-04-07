@@ -1,0 +1,1 @@
+"On the form for anonymous feedback, the text area should be expandable vertically, so the user has enough space to fit hhis entire response"

@@ -1,0 +1,14 @@
+.tutorial-table tr:hover{
+    background-color: #e1e1e1;
+}
+
+.banner{
+    padding:40px 40px 0;
+
+}
+
+.rweek, .week{
+    text-align: center;
+    background-color: #e5f1f7;
+}
+

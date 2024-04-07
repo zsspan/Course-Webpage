@@ -1,0 +1,1 @@
+"When the viewport is shrunk a considerable amount (like the width of a phone) the contents will be displayed vertically instead of horizontally, ensuring the user can still see all the information in a presentable format"

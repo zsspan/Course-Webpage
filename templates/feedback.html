@@ -1,0 +1,212 @@
+{% extends "template.html" %}
+
+{% block title %}
+  Feedback
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="../static/styles/feedback.css" />
+{% endblock %}
+
+{% block content %}
+<div class="main-div banner">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2 class="main-title">
+          {% if session.type == "student" %}
+          Give Anonymous Feedback
+          {% else %}
+          View Anonymous Feedback for {{session.name}}
+          {% endif %}
+        </h2>
+      </div>
+    </div>
+  </section>
+</div>
+{% if session.type == "student" %}
+<div class="form-area">
+  <section class="info-container wrap">
+    <div class="container">
+      {% with messages = get_flashed_messages() %}
+      {% if session.feedback %}
+        <div class="flash-messages">
+          {% for message in messages %}
+              <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+        <form id="remark-form" action="/feedback" method="post">
+          <label for="instructor">Instructor</label>
+          <select name="instructor" id="instructor">
+            {% for instructor in instructor_list %}
+            <option value="{{ instructor}}">{{ instructor|title }}</option>
+            {% endfor %}
+        </select>
+          <label for="question1">How do you feel about the instructor's teaching style?</label>
+          <textarea
+            type="text"
+            name="question1"
+            placeholder="Thoughts?.."
+          ></textarea>
+          <label for="question2">Do you have any specific reccomendations for the instructor?</label>
+          <textarea
+            type="text"
+            name="question2"
+            placeholder="Reccomendations?.."
+        ></textarea>
+          <label for="question3">What have you enjoyed about the labs?</label>
+          <textarea
+            type="text"
+            name="question3"
+            placeholder="Enjoyment?.."
+          ></textarea>
+          <label for="question4">What improvements do you think can be made to the labs?</label>
+          <textarea
+            type="text"
+            name="question4"
+            placeholder="Improvement?.."
+          ></textarea>
+          <input type="submit">
+        </form>
+      </div>
+      <div class="msg">
+        <img src="../static/images/uoftshield.jpg" alt="UofT Logo">
+        <p>Thank you for your feedback!</p>
+      </div>
+    </div>
+  </section>
+{% else %}
+<div class="questions">
+  <div class="question-list">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2>Question One Responses</h2>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>How do you feel about the instructor's teaching style?
+              </th>
+            </tr>
+          </thead>
+          <tbody class="assignment-table">
+            {% if responses['question_1']|length == 0 %}
+            <tr>
+              <td>Currently awaiting feedback</td>
+            </tr>
+            {% else %}
+              {% for response in responses['question_1'] %}
+              <tr>
+                <td>{{ response }}</td>
+              </tr>
+              {% endfor %}
+            {% endif %} 
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  </div>
+  <div class="question-list">
+    <section class="info-container">
+      <div class="container">
+        <div class="title">
+          <h2>Question Two Responses</h2>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Do you have any specific reccomendations for the instructor?
+                </th>
+              </tr>
+            </thead>
+            <tbody class="assignment-table">
+              {% if responses['question_2']|length == 0 %}
+              <tr>
+                <td>Currently awaiting feedback</td>
+              </tr>
+              {% else %}
+                {% for response in responses['question_2'] %}
+                <tr>
+                  <td>{{ response }}</td>
+                </tr>
+                {% endfor %}
+              {% endif %} 
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    </div>
+    <div class="question-list">
+      <section class="info-container">
+        <div class="container">
+          <div class="title">
+            <h2>Question Three Responses</h2>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>What have you enjoyed about the labs?
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="assignment-table">
+                {% if responses['question_3']|length == 0 %}
+                <tr>
+                  <td>Currently awaiting feedback</td>
+                </tr>
+                {% else %}
+                  {% for response in responses['question_3'] %}
+                  <tr>
+                    <td>{{ response }}</td>
+                  </tr>
+                  {% endfor %}
+                {% endif %}                          
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      </div>
+      <div class="question-list">
+        <section class="info-container">
+          <div class="container">
+            <div class="title">
+              <h2>Question Four Responses</h2>
+            </div>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>What improvements do you think can be made to the labs?
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="assignment-table">
+                  {% if responses['question_4']|length == 0 %}
+                  <tr>
+                    <td>Currently awaiting feedback</td>
+                  </tr>
+                  {% else %}
+                    {% for response in responses['question_4'] %}
+                    <tr>
+                      <td>{{ response }}</td>
+                    </tr>
+                    {% endfor %}
+                  {% endif %} 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        </div>
+</div>
+{% endif %}
+{% endblock %}

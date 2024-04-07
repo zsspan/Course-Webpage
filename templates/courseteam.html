@@ -1,0 +1,60 @@
+{% extends "template.html" %}
+
+{% block title %}
+  Course Team
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="../static/styles/courseteam.css" />
+{% endblock %}
+
+{% block content %}
+<div class="main-div banner">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2 class="main-title">Meet the Course Team</h2>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="team-list">
+  <section class="info-container list">
+    <div class="profile-container">
+      <img
+        class="profile-image"
+        src="../static/images/purva_gawde.png"
+        alt="Instructor"
+      />
+      <div class="instructor-name"><a class = "prof-link" href ="https://www.utsc.utoronto.ca/cms/purva-gawde-0" target="_blank">Professor Purva Gawde</a></div>
+    </div>
+    <div class="profile-container">
+      <img
+        class="default-image"
+        src="../static/images/cropped-pfp.png"
+        alt="Teacher Assistant"
+      />
+      <div class="default-name">
+        <ul class="ta-list">
+          <li class="ta-name ta-title">Teacher Assistants</li>
+          <li class="ta-name">Pourya Moghadam</li>
+          <li class="ta-name">Nisha Rajendran</li>
+          <li class="ta-name">Joshua Concon</li>
+          <li class="ta-name">Navinn Ravindaran</li>
+          <li class="ta-name">Danny Chen</li>
+        </ul>
+      </div>
+    </div>
+    {% for instructor in instructor_list %}
+    <div class="profile-container">
+      <img
+        class="profile-image"
+        src="../static/images/blank-pfp.png"
+        alt="Teacher Assistant"
+      />
+      <div class="instructor-name">{{ instructor }}</div>
+    </div>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

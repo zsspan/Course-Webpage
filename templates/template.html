@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <main class="viewport">
+      <header>
+        <div class="top-bar">
+          <div class="logo">
+            <img class="uoftlogo" src="../static/images/uoftwhitelogo3.png" alt="UofT Logo" />
+          </div>
+          <div class="spacer"></div>
+          {% if not session.name %}
+          <nav class="not-navigation">
+        {% else %}
+        <nav class="navigation">
+            {% endif %}
+            <ul>
+                {% if session.name %}
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('assignments') }}">Assignments</a></li>
+              <li><a href="{{ url_for('modules') }}">Lectures/Labs</a></li>
+              <li><a href="{{ url_for('courseteam') }}">Course Team</a></li>
+              <li><a href="{{ url_for('grades') }}">
+                {% if session.type == "student" %}
+                Grades
+                {% else %}
+                Students
+                {% endif %}
+              </a></li>
+              <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+              {% else %}
+              <li><a href="{{ url_for('login') }}">Login/Register</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+          {% if session.name %}
+          <div class="spacer"></div>
+          <div class="dropdown">
+            <a class="menu-btn" href="{{ url_for('index') }}">Menu</a></li>
+            <div class="droplinks">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('assignments') }}">Assignments</a>
+                <a href="{{ url_for('modules') }}">Lectures/Labs</a>
+                <a href="{{ url_for('courseteam') }}">Course Team</a>
+                <a href="{{ url_for('grades') }}">Students</a>
+                <a href="{{ url_for('feedback') }}">Feedback</a>
+              </div>
+          </div>
+          {% endif %}
+          <div class="login-pfp">
+            {% if session.name %}
+              <a class="menu-btn" href="{{ url_for('index') }}">
+                ~ Hi, {{ session['name'] }} ~
+            </a>
+              <div class="droplinks">
+                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="{{ url_for('announcements') }}">Announcements</a>
+                <!-- {% if session['first-name'] != ""  %}
+                <a href="#"><span class="heading">Account Name:</span> {{ session['first-name'] + " " + session['last-name'] }}</a>
+                {% endif  %} -->
+                <a href="#"><span class="heading">Username:</span> {{ session['name']}}</a>
+                <a href="#"><span class="heading">Account Type:</span> {{ session.type|title }}</a>
+                <a href="#"><span class="heading">Email:</span> {{ session.email }}</a>
+                {% if session.type == "student" %}
+                <a href="#"><span class="heading">Instructor:</span> {{ session.instructor }}</a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>          
+        </div>
+        <div class="bottom-bar"></div>
+      </header>
+    <div class="web-content">
+    
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+      <p>&copy; 2024 CSCB20 - </p>
+      <p>Site designed by Zohair Syed - </p>
+      <a href="https://www.utsc.utoronto.ca/cms/computer-science" target="_blank">View full UTSC CMS Faculty</a>
+    </footer>
+  </main>
+  </body>
+  {% block js %}
+  {% endblock %}
+</html>

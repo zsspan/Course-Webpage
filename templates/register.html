@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register and Login</title>
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+    <link rel="stylesheet" href="../static/styles/login.css" />
+  </head>
+  <body>
+    <main class="viewport">
+      <header>
+        <div class="top-bar">
+          <div class="logo">
+            <img
+              class="uoftlogo"
+              src="../static/images/uoftwhitelogo3.png"
+              alt="UofT Logo"
+            />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="{{ url_for('login') }}">Register/Login</a></li>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="bottom-bar"></div>
+      </header>
+      <div class="web-content">
+        <div class="front-img">
+          <img src="../static/images/main-image.png" alt="UTSC" />
+        </div>
+        <div class="form-box">
+          <section class="info-container">
+            <div class="toggle-menu">
+              <p>Need an account? Switch to register!</p>
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <div class="form-type hidden" id="login">
+              <div class="login-box">
+                <div class="actual-login">
+                  <h2>Login</h2>
+                  <form id="loginForm" action="/login" method="post">
+                    <input type="hidden" name="form_type" value="login">
+                    <input type="text" name="username" placeholder="Username" required />
+                    <!-- <input type="text" name="email" placeholder="Email" required /> -->
+                    <input type="password" name="password" placeholder="Password" required />
+                    <button type="submit">Login</button>
+                </form>
+                </div>
+                <div class="login-extra">
+                  <div class="image-container">
+                    <img src="../static/images/hl.jpg" alt="Highland Hall" />
+                  </div>
+                  <div class="info-box">
+                    <p>
+                      <span class="important">Login to your UofT Account!</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-type" id="register">
+              <div class="login-box">
+                <div class="actual-login">
+                  <h2>Register</h2>
+                  <form id="createUserForm" action="/login" nethod="post">
+                    <input type="hidden" name="form_type" value="register">
+                    <input type="text" name="username" placeholder="Username" required />
+                    <input type="text" name="email" placeholder="Email" required />
+                    <input type="password" name="password" placeholder="Password" required />
+                    <select name="userType" name="userType" id="userType" required>
+                      <option value="" disabled selected>
+                        Select User Type
+                      </option>
+                      <option value="student">Student</option>
+                      <option value="instructor">Instructor</option>
+                    </select>
+                    <button type="submit">Register</button>
+                  </form>
+                </div>
+                <div class="login-extra">
+                  <div class="image-container">
+                    <img
+                      src="../static/images/ic.jpg"
+                      alt="Instructional Center"
+                    />
+                  </div>
+                  <div class="info-box">
+                    <p>
+                      <span class="important">Register a new account!</span>
+                      Appropriately choose between a student and instructor
+                      account. Remember to create a strong password, and do not
+                      share this password with others.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; 2024 CSCB20 -</p>
+        <p>Site designed by Zohair Syed and Vignesh V. -</p>
+        <a
+          href="https://www.utsc.utoronto.ca/cms/computer-science"
+          target="_blank"
+          >View full UTSC CMS Faculty</a
+        >
+      </footer>
+    </main>
+  </body>
+  <script type="text/javascript" src="../static/scripts/login.js"></script>
+</html>

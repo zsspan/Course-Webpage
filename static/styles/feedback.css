@@ -1,0 +1,113 @@
+.form-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 40px 40px 40px;
+}
+
+.info-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 25px;
+}
+
+textarea{
+    font-family: sans-serif;
+}
+
+input[type=text], select, textarea {
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px; 
+    margin-bottom: 15px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #002a5c;
+    color: white;
+    padding: 12px 30px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.3s ease;
+    }
+  
+  textarea:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  input[type=submit]:hover {
+    opacity: 0.9;
+  }
+  
+  .container {
+    flex: 1;
+    border-radius: 5px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bottom{
+    min-width: 400px;
+    display: flex;
+  }
+
+  .msg img{
+    width: 100%;
+    border-radius: 15px;
+    min-width: 300px;
+  }
+
+  .msg p{
+    margin: 10px;
+    font-size: 20px;
+    color:#002a5c;
+    font-weight: bold;
+    text-align: center;
+  }
+  .msg{
+    flex: 1;
+    border-radius: 5px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  form{
+    padding:35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 300px;
+
+  }
+
+  /*flash message*/
+  .flash-messages{
+    text-align: center;
+    font-weight: bolder;
+    color:#002a5c;
+    font-size: 24px;
+  }
+
+  .question-list{
+    padding: 0 40px 40px 40px;
+}
+
+.assignment-table tr:hover{
+  background-color: #e1e1e1;
+}
+
+.table-container{
+  max-height: 400px;
+  overflow-y: auto;
+}

@@ -1,0 +1,30 @@
+.news-info{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    align-items: center;
+    justify-content: center;
+    vertical-align: auto;
+}
+
+.news-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 40px 40px 40px;
+}
+
+
+.news-list .container{
+    margin-bottom: 10px;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+.news-list img{
+    margin-top: 10px;
+    max-width: 30%;
+}

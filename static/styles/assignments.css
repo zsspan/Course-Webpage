@@ -1,0 +1,20 @@
+.assignment-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.assignment-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 40px 40px 40px;
+}
+
+.link{
+    padding-bottom: 10px;
+}
+
+.assignment-list .container{
+    margin-bottom: 10px;
+}

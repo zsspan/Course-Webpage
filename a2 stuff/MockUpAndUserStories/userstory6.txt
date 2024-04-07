@@ -1,0 +1,1 @@
+"Under modules there will be one section titled lectures, that has an aesthetically pleasing table containing all the relevant information from each week, including any resources and links to the slides"

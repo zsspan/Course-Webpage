@@ -1,0 +1,1 @@
+"On the assignments page, the student user should see all the major assignments of the course, and have their descriptions, as well as the link to the contents"

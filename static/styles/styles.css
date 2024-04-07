@@ -1,0 +1,341 @@
+/*Universal stuff that should be applied across all html files*/
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+button{
+    border: none;
+    transition: opacity 0.2s ease;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.banner{/*the topmost non-header entry in each webpage*/
+    margin-top: 70px;
+}
+
+.main-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+s
+
+a:visited{
+    color: inherit;
+}
+
+a{
+    color: #000d1d;
+}
+button:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.wrap{
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+
+/*Header stuff begins*/
+header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    z-index: 99;
+}
+
+.top-bar {
+    background-color: #002a5c;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 28px;;
+}
+
+.bottom-bar{
+    height: 6px;
+    background-color: rgb(32, 32, 36);
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 10px;
+    margin-right: 30px;
+}
+
+.uoftlogo{
+    height: 70px;
+}
+nav ul{
+    margin-top: 10px;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    font-weight: 530;
+    font-size: 16px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: font-size 0.2s ease;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    font-weight: bolder;
+    font-size: larger;
+}
+/*Header stuff ends*/
+
+.title h2{
+    font-size: 30px;
+}
+
+.main-title{
+    color:#002a5c;
+}
+
+.prof-link{
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+.prof-link:hover{
+    text-decoration: underline;
+}
+
+.info-container {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
+    min-width: 300px; /* Minimum width */
+}
+  
+.separator .info-container{
+    display: block;
+    text-align: center;
+    background-color:#002a5c;
+    color: white;
+    font-size: 26px;
+    box-shadow: inset 0 0 8px 2px rgba(0,0,0,0.2);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.lower{
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+
+.lower .info-container{
+    padding: 0 0 0 0;
+}
+
+.item-content{
+    flex:6;
+    background-color: white;
+    align-self: center;
+    padding: 70px 10px 0 10px;
+}
+
+.item-content img{
+    width: 100%;
+}
+
+/*table stuff*/
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #5a6987;
+    color: #fff;
+}
+
+
+/*footer things*/
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #000d1d;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p{
+    display: inline;
+}
+
+footer a{
+    color: white;
+}
+
+
+/*dropdown menu*/
+.spacer{
+    flex-grow: 1;
+}
+.dropdown{
+    align-content: flex-start;
+}
+.dropdown, .login-pfp{
+    position: relative;
+    display: flex;
+    transition: font-weight 0.2s ease;
+    justify-content: right;
+}
+
+.droplinks {
+    border-width: 10px;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    top: 28px;
+}
+
+.droplinks a {
+    word-wrap: break-word; 
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .droplinks a .heading {
+    font-weight: bolder;
+    display: block;
+  }
+  
+.menu-btn, .menu-title{
+    flex: 1;
+    font-size: 16px;
+    text-decoration: none;
+    padding-top: 10px;
+    /* padding-bottom: 10px; */
+    margin-left: 30px;
+}
+
+.menu-btn{
+    margin-right: 20px;
+    color: white;
+}
+
+.login-pfp .menu-btn:hover, .dropdown .menu-btn:hover{
+    text-decoration: underline;
+    font-weight: bolder;
+    opacity: 1 !important;
+
+}
+
+.droplinks a:hover {background-color: #ddd;}
+
+/* show dropdown */
+.dropdown:hover .droplinks {
+    display: block;
+}
+
+.login-pfp:hover .droplinks {
+    display: block;
+}
+
+.menu-btn:hover{
+    opacity: 0.5;
+}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.login-pfp:hover .dropbtn {background-color: #3e8e41;}
+
+/*alert for when not logged in */
+.alert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(39, 39, 43) !important;
+    margin-top: 70px;
+    color: white;
+    min-width:420px;
+    padding-top: 5px 0px;
+}
+
+.alert p{
+    text-align: center;
+}
+
+.alert p a{
+    color: white;
+}
+
+/*styles used variously throughout the website*/
+.no-margin{
+    margin-top: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+/*media queries*/
+/*big screen*/
+@media screen and (min-width:1080px) {
+    .dropdown {
+        display: none;
+    }
+    .menu-title{
+        display: none;
+    }
+}
+
+/*small screen*/
+@media screen and (max-width: 1079px) {
+    .navigation {
+      display: none;
+      flex: none;
+    }
+    .menu-btn{
+        margin-left: 10px;
+    }
+  }

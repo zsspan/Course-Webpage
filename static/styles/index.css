@@ -1,0 +1,178 @@
+.banner{
+    padding: 40px 40px 0;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+
+.right{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.left{
+    display: flex;
+    flex: 1.5;
+    flex-direction: column;
+    align-items: start;
+    min-width: 350px;
+}
+
+
+.title h2{
+    font-size: 30px;
+}
+
+.desc{
+    font-weight: bold;
+    font-size: 20px;
+    align-items: start;
+    color: rgb(60, 75, 105);
+}
+.left .info{
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 25px;
+}
+.left .info h6{
+    font-size: 40px;
+}
+.text{
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.pfp {
+    padding-top: 10px;
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 20%;
+}
+
+.contact-list {
+    list-style: none;
+  }
+  
+  .contact-list li {
+    margin-bottom: 4px;
+  }
+  
+  .bold {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+.lower{
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+.top-item-margin{
+    flex: 1;
+    background-color: #5a6987;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.bottom-item-margin{
+    flex: 1;
+    background-color:#5a6987;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.item-content{
+    flex:6;
+    background-color: white;
+    align-self: center;
+    padding: 70px 10px 0 10px;
+}
+
+/*item buttons start*/
+.markus{
+    padding: 35px 0 0 0;
+}
+
+.syllabus{
+    padding:60px 0 0 0 ;
+}
+
+.quercus{
+    padding-top: 30px;
+}
+
+.markus img, .quercus img, .piazza img, .syllabus img{
+    transition: opacity 0.2s ease;
+}
+.quercus img:hover, .markus img:hover, .syllabus img:hover, .piazza img:hover{
+    opacity: 0.5;
+}
+.item-content img{
+    width: 100%;
+}
+/*item buttons end*/
+
+
+.instructor{
+    background-color: rgb(212, 229, 255);
+}
+
+tbody tr:hover{
+    background-color: #ddd;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-top: 20px;
+}
+
+.office-hours{
+    margin: 40px;
+}
+
+.alert p{
+    text-align: center;
+}
+
+/*image at the front*/
+.front-img{
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    display: flex;
+}
+
+.front-img img{
+    width: 100%;
+}
+
+  @media screen and (max-width: 680px) {
+    .front-img{
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .front-img {
+        display: none;
+    }
+    .banner{
+        margin-top: 70px;
+    }
+  }

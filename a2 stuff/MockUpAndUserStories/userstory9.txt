@@ -1,0 +1,1 @@
+"Under the homepage there should be a list of office hours including the instructor, date, time, and location. Hovering over any entry in the column should highlight it, allowing for a better visual appeal"

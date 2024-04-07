@@ -1,0 +1,187 @@
+{% extends "template.html" %}
+
+{% block title %}
+  Course Home
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="../static/styles/index.css" />
+{% endblock %}
+
+{% block content %}
+{% if not session.name %}
+<div class="alert">
+  <p>
+  📣📢  Please login for full-feature access to this course webpage! ⚠️🚨
+</p>
+</div>
+{% else %}
+<div class="front-img">
+  <div class="spacer"></div>
+<img src="../static/images/homepage.png" alt="UTSC" />
+</div>
+  <div class="banner main-div no-margin">
+
+{% endif %}
+  <section class="info-container">
+    <div class="container">
+        <div class="title">
+          <h2 class="main-title wrap">Introduction to Web Applications and Databases, Winter 2024</h2>
+        </div>
+  </section>
+</div>
+<div class="main-div">
+  <section class="info-container">
+    <div class="container">
+      <div class="right">
+        <div class="title">
+          <h2><a class = "prof-link" href ="https://www.utsc.utoronto.ca/cms/purva-gawde-0" target="_blank">Professor Purva Gawde</a></h2>
+        </div>
+        <div class="info wrap">
+          <img class="pfp" src="../static/images/purva_gawde.png" alt="Purva Gawde"/>
+          <ul class="contact-list">
+            <li><span class="bold">Email:</span><br>purva.gawde@utoronto.ca</li>
+            <li><span class="bold">Phone:</span>(647) 601-4658</li>
+            <li><span class="bold">Room:</span>IC 484</li>
+          </ul>
+        </div>
+      </div>
+      <div class="left">
+        <div class="title">
+          <h2>Course Description</h2>
+        </div>
+        <div class="info wrap">
+          <p class="text">
+            A practical introduction to databases and Web app development.
+            Databases: terminology and applications; creating, querying and
+            updating databases; the entity-relationship model for database
+            design. Web documents and applications: static and interactive
+            documents; Web servers and dynamic server-generated content; Web
+            application development and interface with databases.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <span class="bold">Technologies Used:</span>mySQL, HTML/CSS,
+              JS/jQuery, Flask
+            </li>
+            <li>
+              <span class="bold">Prerequisites:</span>Some experience with
+              programming in a language such as Python, Java or C.
+            </li>
+            <li>
+              <span class="bold">Exclusions:</span>This course may not be
+              taken after (or concurrently with) any C/D level CSC course
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% if session.name %}
+<div class="main div">
+  <section class="info-container office-hours">
+    <div class="container">
+        <div class="title">
+          <h2>Weekly Office Hours</h2>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Instructor/TA</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pourya Moghadam</td>
+                <td>Monday</td>
+                <td>11 to 12</td>
+                <td>IC 402</td>
+              </tr>
+              <tr>
+                <td class="instructor">Purva Gawde</td>
+                <td class="instructor">Tuesday</td>
+                <td class="instructor">12 to 1</td>
+                <td class="instructor">IC 484</td>
+              </tr>
+              <tr>
+                <td>Nisha Rajendran</td>
+                <td>Wednesday</td>
+                <td>10 to 11</td>
+                <td>IC 402</td>
+              </tr>
+              <tr>
+                <td>Joshua Concon</td>
+                <td>Wednesday</td>
+                <td>3 to 4</td>
+                <td>IC 402</td>
+              </tr>
+              <tr>
+                <td>Navinn Ravindaran</td>
+                <td>Friday</td>
+                <td>11 to 12</td>
+                <td>IC 402</td>
+              </tr>
+              <tr>
+                <td>Danny Chen</td>
+                <td>Friday</td>
+                <td>12 to 1</td>
+                <td>IC 402</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  </section>
+</div>
+<div class="separator">
+  <section class="info-container">Useful Resources</section>
+</div>
+<div class="main-div lower">
+  <section class="info-container">
+    <div class="item">
+      <div class="top-item-margin"></div>
+      <div class = "item-content quercus">
+        <a href= "https://q.utoronto.ca/courses/332364/modules" target="_blank">
+          <img src="../static/images/quercus.jpg" alt="Quercus">
+        </a></div>
+      <div class="bottom-item-margin"></div>
+    </div>
+  </section>
+  <section class="info-container piazza">
+      <div class="item">
+        <div class="top-item-margin"></div>
+        <div class = "item-content">
+          <a href="https://piazza.com/class/lqy466htv8g5xb" target="_blank">
+            <img src="../static/images/piazza.png" alt="Piazza"></div>
+        </a>
+        <div class="bottom-item-margin"></div>
+      </div>
+  </section>
+  <section class="info-container">
+    <div class="item">
+      <div class="top-item-margin"></div>
+      <div class = "item-content markus">
+        <a href="https://markus2.utsc.utoronto.ca/?locale=en" target = "_blank">
+          <img src="../static/images/markus.png" alt="MarkUs">
+        </a></div>
+      <div class="bottom-item-margin"></div>
+    </div>
+  </section>
+  <section class="info-container">
+    <div class="item">
+      <div class="top-item-margin"></div>
+      <div class = "item-content syllabus">
+        <a href="files/CSCB20 Winter 2024 Course Information Sheet.pdf" target = "_blank">
+          <img src="../static/images/syllabuspic.png" alt="Syllabus">
+        </a></div>
+      <div class="bottom-item-margin"></div>
+    </div>
+  </section>
+</div>
+
+{% endif %}
+{% endblock %}

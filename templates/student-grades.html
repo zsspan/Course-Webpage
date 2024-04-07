@@ -1,0 +1,105 @@
+{% extends "template.html" %} {% block title %} Assignments {% endblock %} {%
+block css %}
+<link rel="stylesheet" href="../static/styles/grades.css" />
+{% endblock %} {% block content %}
+<div class="alert">
+  <p>
+  📣📢  Use the buttons to alter the student grades. <a href="{{ url_for('grades') }}">Back to all students?</a> ⚠️🚨
+</p>
+</div>
+<div class="main-div banner no-margin">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2 class="main-title">
+          {{ student.user.username }}'s Grades
+        </h2>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="assignment-list">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2>All Assignments/Assessments</h2>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Evaluation Number</th>
+              <th>Evaluation Name</th>
+              <th>Grade (%)</th>
+              <th>Add/Change Grade</th>
+            </tr>
+          </thead>
+          <tbody class="assignment-table">
+            {% for assignment in assignments %}
+            <tr>
+              <td>{{ assignment.number }}</td>
+              <td>{{ names[loop.index0] }}</td>
+              {% if assignment.grade is none %}
+              <td>N/A</button></td>
+              {% else %}            
+              <td>{{ assignment.grade }}</td>
+              {% endif %}
+              <td><button class="alter-grade" data-number="{{ assignment.number }}" 
+                data-regradebool="{{ assignment.regrade_requested }}" 
+                data-regrade-mark="{{ assignment.requested_new_grade }}"
+                data-regrade-desc="{{ assignment.description}}">
+                {% if assignment.grade %}
+                  {% if assignment.regrade_requested %}
+                    Pending Remark Request
+                  {% else %}
+                  Change Grade
+                  {% endif %}
+                {% else %}
+                Add Grade
+              {% endif %}
+              </button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- modal HTML for changing/adding grades -->
+<div id="gradeModal" class="modal hidden">
+  <div class="modal-content">
+    <div class="titular">
+      <h2>Input Grade for Assignment <span id="assignmentNumber"></span></h2>
+      <span class="close">&times;</span>
+    </div>
+          <!-- display requested grade and description if there is a remark request -->
+          {% for assignment in assignments %}
+          {% if assignment.regrade_requested %}
+            <div class="remark-info" data-assignment-number="{{assignment.number}}">
+              <h3>Remark Requested</h3>
+              <p><strong>Requested Grade:</strong> {{ assignment.requested_new_grade }}%</p>
+              <p><strong>Description:</strong> {{ assignment.description }}</p>
+            </div>
+          {% endif %}
+            <form class="grade-form hidden" data-assignment-number="{{assignment.number}}" action="/grades/{{student.user.username}}" method="post">
+              <input type="hidden" name="assignment-number" value="{{assignment.number}}"/>
+              <input
+                type="number"
+                name="grade"
+                placeholder="Grade (0-100)..."
+                min="0"
+                max="100"
+                required
+              />
+              <button class="form-btn" type="submit">Submit</button>
+            </form>
+      {% endfor %}
+  </div>
+</div>
+
+{% endblock %} {% block js %}
+<script src="../static/scripts/student-grades.js"></script>
+{% endblock %}

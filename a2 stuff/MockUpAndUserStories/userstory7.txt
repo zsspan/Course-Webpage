@@ -1,0 +1,1 @@
+"Under modules when the user scrolls there will also be a section titled tutorials. In a similar manner it will contain a table contianing the week number, handouts, and solutions"

@@ -1,0 +1,1 @@
+"As a student user, viewing the course team page should show me a grid of all the TAs, with a special emphasis on the professor"

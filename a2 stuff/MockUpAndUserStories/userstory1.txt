@@ -1,0 +1,1 @@
+"As a student user, there should be a navigation bar that corresponds to the home page, assignments, modules, course team, and feedback"

@@ -1,0 +1,1 @@
+"As a student user, wherever the professor's name is mentioned, it should react to a hover and redirect the user to the professor's website"

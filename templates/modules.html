@@ -1,0 +1,178 @@
+{% extends "template.html" %}
+
+{% block title %}
+  Modules
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="../static/styles/modules.css" />
+{% endblock %}
+
+{% block content %}
+<div class="main-div banner">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2 class="main-title">Class Modules</h2>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="main-div">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2>Lectures</h2>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Week #</th>
+              <th>Lecture</th>
+              <th>Date</th>
+              <th>Unit</th>
+              <th>Lecture Slides</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Week 1 -->
+            <tr>
+              <td rowspan="2" class="week" >1</td>
+              <td>Lecture 0</td>
+              <td>Jan 8, 2024</td>
+              <td>Introduction</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4">-</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">2</td>
+              <td>Lecture 1</td>
+              <td>Jan 15, 2024</td>
+              <td>Intro to Relational Algebra</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">3</td>
+              <td>Lecture 2</td>
+              <td>Jan 22, 2024</td>
+              <td>Complex Relational Algebra</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">4</td>
+              <td>Lecture 3</td>
+              <td>Jan 29, 2024</td>
+              <td>SQL Queries</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">5</td>
+              <td>Lecture 4</td>
+              <td>Feb 5, 2024</td>
+              <td>SQL Subqueries</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">6</td>
+              <td>Lecture 5</td>
+              <td>Feb 12, 2024</td>
+              <td>Introduction to Flask</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="5" class="rweek">Reading Week</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">7</td>
+              <td>Lecture 6</td>
+              <td>Feb 26, 2024</td>
+              <td>HTML/CSS</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">8</td>
+              <td>Lecture 7</td>
+              <td>Mar 4, 2024</td>
+              <td>Media Queries</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">9</td>
+              <td>Lecture 8</td>
+              <td>Mar 11, 2024</td>
+              <td>Introuction to JavaScript</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="week">10</td>
+              <td>Lecture 9</td>
+              <td>Mar 11, 2024</td>
+              <td>Flask and SQL</td>
+              <td><a href="#">Slides</a></td>
+            </tr>
+            <tr>
+              <td colspan="4"><a href="#">Additional resources</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="main-div">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2>Tutorials</h2>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Week #</th>
+              <th>Handout</th>
+              <th>Solutions</th>
+            </tr>
+          </thead>
+          <tbody class="tutorial-table">
+            {% for week_num in range(2, 11) %}
+            <tr>
+              <td>{{ week_num }}</td>
+              <td><a href="{{ url_for('static', filename='files/blank.pdf') }}"target="_blank">Week {{ week_num }} Handout</a></td>
+              <td><a href="{{ url_for('static', filename='files/blank.pdf') }}" target="_blank">Solutions</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>          
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

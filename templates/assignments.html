@@ -1,0 +1,76 @@
+{% extends "template.html" %}
+
+{% block title %}
+  Assignments
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="../static/styles/assignments.css" />
+{% endblock %}
+
+{% block content %}
+<div class="alert">
+  <p>
+  📣📢  This page contains the list of assignments.
+  
+  <a href="{{ url_for('grades') }}">Redirect to your 
+    {% if session.type == "instructor" %}
+    students'
+    {% endif %}
+  grades?</a>
+  ⚠️🚨
+</p>
+</div>
+<div class="main-div banner no-margin">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2 class="main-title">Assignments</h2>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="assignment-list">
+  <section class="info-container">
+    <div class="container">
+      <div class="assignment-info">
+        <h2>Assignment 1 - Relational Algebra and SQL</h2>
+        <p>
+          Practice with relational algebra, querying and using SQLite to
+          work with databses
+        </p>
+        <a class="link"
+          href="https://q.utoronto.ca/courses/332364/assignments/1246675"
+          >Handout</a
+        >
+      </div>
+    </div>
+    <div class="container">
+      <div class="assignment-info">
+        <h2>Assignment 2 - HTML/CSS and Python Flask</h2>
+        <p>
+          Design a basic Flask application in addition to creating a
+          suitable course website for CSCB20
+        </p>
+        <a class="link"
+          href="https://q.utoronto.ca/courses/332364/assignments/1260424"
+          >Handout</a
+        >
+      </div>
+    </div>
+    <div class="container">
+      <div class="assignment-info">
+        <h2>Assignment 3 - JavaScript, Flask, SQL</h2>
+        <p>
+          Future details will be posted as the date of the assignment
+          grows closer.
+        </p>
+        <a class="link"
+          href="#"
+          >Coming Soon!</a
+        >
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

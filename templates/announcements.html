@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+
+{% block title %} 
+  Announcements
+{%endblock %} 
+
+{% block css %}
+<link rel="stylesheet" href="../static/styles/announcements.css" />
+{% endblock %} 
+
+{% block content %}
+<div class="main-div banner">
+  <section class="info-container">
+    <div class="container">
+      <div class="title">
+        <h2 class="main-title">Announcements and Upcoming News</h2>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="news-list">
+  <section class="info-container">
+    <div class="container">
+      <div class="news-info">
+        <h2>First News on Bulletin!</h2>
+        <p>
+          This is where you will see professor announcements. Keep posted to see
+          updates!
+        </p>
+        <img src="../static/images/news.jpg" alt="News" />
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
