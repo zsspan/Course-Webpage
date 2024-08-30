@@ -5,8 +5,25 @@ This course webpage was designed as the final project for the UTSC course CSCB20
 
 ## Notice
 
-To view the webpage you must clone this repository. Open any terminal and run the command:
+To view the webpage you must clone this repository. Open any terminal and run the command: (note this repository is different than the repository submitted for the assignment due to academic policies)
 
 ```
 git clone https://github.com/zsspan/course-webpage
 ```
+## Images
+
+<p align="center">
+  <img src="MockUpAndUserStories/screenshots/register.png" width="400" hspace="10">
+  <img src="MockUpAndUserStories/screenshots/info.png" width="400" hspace="10">
+</p>
+
+<p align="center">
+  <img src="MockUpAndUserStories/screenshots/home.png" width="400" hspace="10">
+  <img src="MockUpAndUserStories/screenshots/register2.png" width="400" hspace="10">
+</p>
+
+<p align="center">
+  <img src="MockUpAndUserStories/screenshots/grades.png" width="400" hspace="10">
+</p>
+
+
