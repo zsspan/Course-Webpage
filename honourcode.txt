@@ -1,4 +1,0 @@
-Honor Code: I (Zohair Syed) pledge that this program represents my own program code and that we have coded on our own. I received help from no one in designing and debugging this program. I have also read the plagiarism section in the course info sheet of CSC B20 and understand the consequences.
-
-- Zohair Syed
-1010116438
