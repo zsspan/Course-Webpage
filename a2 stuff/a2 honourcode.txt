@@ -1,7 +1,0 @@
-Honor Code: We (Zohair Syed, Vignesh Veerakumar) pledge that this program represents my own program code and that we have coded on our own. We received help from no one in designing and debugging this program. We have also read the plagiarism section in the course info sheet of CSC B20 and understand the consequences.
-
-- Zohair Syed
-1010116438
-
--Vignesh Veerakumar
-1009930470
